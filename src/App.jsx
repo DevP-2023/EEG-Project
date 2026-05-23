@@ -2,10 +2,12 @@ import { useState } from "react";
 import Header from "./components/Header";
 import SectionCard from "./components/SectionCard";
 import Results from "./components/Results";
+import About from "./components/About";
 import Footer from "./components/Footer";
 import { sections } from "./data/questions";
 import { scoreSection, calculatePercentile, interpretPercentile } from "./utils/scoring";
 import "./index.css";
+
 
 function App() {
   const [name, setName] = useState("");
@@ -14,6 +16,18 @@ function App() {
   const [results, setResults] = useState(null);
   const [showValidation, setShowValidation] = useState(false);
   const [missingQuestions, setMissingQuestions] = useState([]);
+  const [isTestStarted, setIsTestStarted] = useState(false);
+
+  const handleStartTest = () => {
+    setIsTestStarted(true);
+    setTimeout(() => {
+      const el = document.getElementById("section-depression");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
+  };
+
 
   const handleAnswer = (sectionId, questionIndex, value) => {
     setAnswers((prev) => ({
@@ -91,6 +105,7 @@ function App() {
     setResults(null);
     setShowValidation(false);
     setMissingQuestions([]);
+    setIsTestStarted(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -101,57 +116,96 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      <Header name={name} setName={setName} date={date} setDate={setDate} />
-
-      {/* Progress bar */}
-      <div className="progress-container">
-        <div className="progress-info">
-          <span>Progress</span>
-          <span>
-            {answeredCount} / {totalQuestions} questions answered ({progressPct}%)
-          </span>
-        </div>
-        <div className="progress-track">
-          <div
-            className="progress-fill"
-            style={{ width: `${progressPct}%` }}
+      {!isTestStarted ? (
+        <>
+          <Header
+            name={name}
+            setName={setName}
+            date={date}
+            setDate={setDate}
+            isTestStarted={isTestStarted}
+            onStartTest={handleStartTest}
           />
-        </div>
-      </div>
+          <About />
+        </>
+      ) : (
+        <>
+          {/* Test View Top bar */}
+          <div className="test-view-header">
+            <button className="btn-back" onClick={() => setIsTestStarted(false)}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"/>
+                <polyline points="12 19 5 12 12 5"/>
+              </svg>
+              Exit Questionnaire
+            </button>
+            <div className="test-view-title-group">
+              <h2 className="test-view-title">IMHMA Questionnaire</h2>
+              <span className="test-view-patient">
+                {name ? (
+                  <>
+                    Participant: <strong>{name}</strong> {date && `| Date: ${date}`}
+                  </>
+                ) : (
+                  <>
+                    Participant: <strong>Anonymous</strong> {date && `| Date: ${date}`}
+                  </>
+                )}
+              </span>
+            </div>
+          </div>
 
-      {/* Sections */}
-      {sections.map((sec) => (
-        <SectionCard
-          key={sec.id}
-          section={sec}
-          answers={answers}
-          onAnswer={handleAnswer}
-          missingQuestions={missingQuestions}
-        />
-      ))}
+          {/* Progress bar */}
+          <div className="progress-container">
+            <div className="progress-info">
+              <span>Progress</span>
+              <span>
+                {answeredCount} / {totalQuestions} questions answered ({progressPct}%)
+              </span>
+            </div>
+            <div className="progress-track">
+              <div
+                className="progress-fill"
+                style={{ width: `${progressPct}%` }}
+              />
+            </div>
+          </div>
 
-      {/* Action Buttons */}
-      <div className="action-buttons">
-        <button
-          className="btn btn-submit"
-          onClick={handleSubmit}
-          id="btn-submit"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Submit Assessment
-        </button>
-        <button
-          className="btn btn-reset"
-          onClick={handleReset}
-          id="btn-reset"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
-          Reset Form
-        </button>
-      </div>
+          {/* Sections */}
+          {sections.map((sec) => (
+            <SectionCard
+              key={sec.id}
+              section={sec}
+              answers={answers}
+              onAnswer={handleAnswer}
+              missingQuestions={missingQuestions}
+            />
+          ))}
 
-      {/* Results */}
-      {results && <Results results={results} name={name} date={date} />}
+          {/* Action Buttons */}
+          <div className="action-buttons">
+            <button
+              className="btn btn-submit"
+              onClick={handleSubmit}
+              id="btn-submit"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Submit Assessment
+            </button>
+            <button
+              className="btn btn-reset"
+              onClick={handleReset}
+              id="btn-reset"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+              Reset Form
+            </button>
+          </div>
+
+          {/* Results */}
+          {results && <Results results={results} name={name} date={date} />}
+        </>
+      )}
 
       <Footer />
     </div>

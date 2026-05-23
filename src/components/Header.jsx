@@ -1,8 +1,16 @@
 import React from "react";
 
-export default function Header({ name, setName, date, setDate }) {
+export default function Header({
+  name,
+  setName,
+  date,
+  setDate,
+  isTestStarted,
+  onStartTest,
+}) {
   return (
     <header className="header-card">
+
       <div className="header-badge">IMHMA</div>
       <h1 className="header-title">
         Integrated Mental Health Monitoring Assessment
@@ -90,6 +98,18 @@ export default function Header({ name, setName, date, setDate }) {
           <span className="scale-chip"><strong>4</strong> Always / Nearly every day</span>
         </div>
       </div>
+
+      {/* CTA Button */}
+      {!isTestStarted && (
+        <div className="cta-container">
+          <button className="cta-btn" onClick={onStartTest}>
+            <svg className="cta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+            Know Your Mental Wellness
+          </button>
+        </div>
+      )}
     </header>
   );
 }
