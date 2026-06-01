@@ -31,13 +31,13 @@ export default function About() {
   ];
 
   const supporters = [
-    { name: "Dr. Father Stanli", initials: "FS" },
-    { name: "Poll", initials: "PL" },
-    { name: "Vijay Waddhahi", initials: "VW" },
-    { name: "Isha Suri", initials: "IS" },
-    { name: "Akshita", initials: "AK" },
-    { name: "Dr. Minakshi", initials: "DM" },
-    { name: "Shweta", initials: "SH" },
+    { name: "Dr. Fr. Paul Chandrankunnel", initials: "PL", image: "Photo/director_paul_chandrankunnel.jpg" },
+    { name: "Dr. Fr. Stanly Wilson", initials: "FS", image: "Photo/Stanley.jpeg" },
+    { name: "Dr. Vijay M. Wadhai", initials: "VW" , image : "Photo/Principal.jpg"},
+    { name: "Ms. Isha Suri", initials: "IS" , image : "Photo/isha.jpeg"},
+    { name: "Dr. Akshita Chanchlani", initials: "AK", image : "Photo/akshita.jpeg" },
+    { name: "Dr. Minakshi Patil", initials: "DM", image : "Photo/minakshee.jpeg" },
+    { name: "Dr. Shweta Kanhere", initials: "SH", image : "Photo/shweta.jpeg" },
   ];
 
   return (
