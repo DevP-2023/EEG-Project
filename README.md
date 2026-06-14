@@ -26,16 +26,13 @@ A modern full-stack web application that combines a React/Vite frontend with an 
 
 The system maps cortical brainwave dynamics across specific frequency bands utilizing the international 10-20 system framework. While designed to ingest wireless, consumer-grade EEG telemetry (e.g., Muse 2 or Emotiv hardware), the mathematical module tracks foundational biomarkers including:
 
-* 
-**Frontal Alpha Asymmetry (FAA):** Evaluates hemispheric power imbalances between left and right frontal lobes (F3 / F4) to mathematically gauge depressive traits.
+* **Frontal Alpha Asymmetry (FAA):** Evaluates hemispheric power imbalances between left and right frontal lobes (F3 / F4) to mathematically gauge depressive traits.
 
 
-* 
-**Theta/Beta Ratio (TBR):** Monitored over central and prefrontal channels to track real-time cognitive fatigue, concentration drops, and attentional resources.
+* **Theta/Beta Ratio (TBR):** Monitored over central and prefrontal channels to track real-time cognitive fatigue, concentration drops, and attentional resources.
 
 
-* 
-**Attention Index:** Derives active mental engagement based on alpha wave suppression and alert beta activation.
+* **Attention Index:** Derives active mental engagement based on alpha wave suppression and alert beta activation.
 
 
 
@@ -43,20 +40,16 @@ The system maps cortical brainwave dynamics across specific frequency bands util
 
 The frontend hosts the Integrated Mental Health Monitoring Assessment (IMHMA). The IMHMA unifies 5 gold-standard clinical scales (PHQ-9, GAD-7, ASRS v1.1, DASS-21, and PSS-10) into a single, cohesive 65-question intake. The system processes raw scores, adjusts for reverse-scored items , and scales four normalized target labels (0-100) mapped to specific severity ranges (Minimal, Mild/Moderate, Severe, Extremely Severe):
 
-* 
-**Section 1: Emotional Wellbeing** → Depression target label.
+* **Section 1: Emotional Wellbeing** → Depression target label.
 
 
-* 
-**Section 2: Calm & Resilience** → Anxiety target label.
+* **Section 2: Calm & Resilience** → Anxiety target label.
 
 
-* 
-**Section 3: Handling Life's Pressures** → Perceived Stress target label.
+* **Section 3: Handling Life's Pressures** → Perceived Stress target label.
 
 
-* 
-**Section 4: Focus & Concentration** → Attention Span / ADHD screening flag.
+* **Section 4: Focus & Concentration** → Attention Span / ADHD screening flag.
 
 
 
@@ -100,12 +93,10 @@ The binary screening classification sub-system runs against a comprehensive **EE
 
 ### Cohort Distributions & Metadata Summary
 
-* 
-**Total Rows (Clinical Samples):** 945 entries.
+* **Total Rows (Clinical Samples):** 945 entries.
 
 
-* 
-**Total Columns (Attributes):** 1,149 attributes spanning metadata, raw band metrics, and relational indicators.
+* **Total Columns (Attributes):** 1,149 attributes spanning metadata, raw band metrics, and relational indicators.
 
 
 * **Global Sex Demographics:** Male (M: 601) | Female (F: 344).
@@ -142,29 +133,24 @@ The 1,144 floating-point columns utilize a strict clinical naming architecture r
 `AB`: **Absolute Power** → Measures the microvolt voltage amplitude strength at a specific sensor location.
 
 
-* 
-`COH`: **Coherence** → Quantifies cross-spectral synchronization and connection properties between two target structural channels.
+* `COH`: **Coherence** → Quantifies cross-spectral synchronization and connection properties between two target structural channels.
 
 
 
 
-2. 
-**Frequency Band Subscales:** Covers `delta`, `theta`, `alpha`, `beta`, `highbeta`, and `gamma`.
+2. **Frequency Band Subscales:** Covers `delta`, `theta`, `alpha`, `beta`, `highbeta`, and `gamma`.
 
 
-3. 
-**Scalp Electrode Configuration Mapping:** Maps 19 separate hardware sensors based on the International 10-20 Standard (e.g., `FP1`, `F3`, `Cz`, `P8`, `O2`). Frontal decision markers use odd numbers for the left hemisphere and even numbers for the right hemisphere.
+3. **Scalp Electrode Configuration Mapping:** Maps 19 separate hardware sensors based on the International 10-20 Standard (e.g., `FP1`, `F3`, `Cz`, `P8`, `O2`). Frontal decision markers use odd numbers for the left hemisphere and even numbers for the right hemisphere.
 
 
 
 *Structural Code Mapping Examples:*
 
-* 
-`AB.A.delta.a.FP1` → Absolute power strength of slow delta sleep wave frequencies recorded at the Left Frontal Pole channel.
+* `AB.A.delta.a.FP1` → Absolute power strength of slow delta sleep wave frequencies recorded at the Left Frontal Pole channel.
 
 
-* 
-`COH.F.gamma.l.T4.o.Pz` → Network sync connectivity signature calculated within the fast gamma band between the Right Temporal node and Midline Parietal site.
+* `COH.F.gamma.l.T4.o.Pz` → Network sync connectivity signature calculated within the fast gamma band between the Right Temporal node and Midline Parietal site.
 
 
 
