@@ -205,7 +205,7 @@ function App() {
           </div>
 
           {/* Results */}
-          {results && <Results results={results} name={name} date={date} />}
+          {results && <Results results={results} name={name} date={date} formAnswers={answers} />}
         </>
       )}
 
