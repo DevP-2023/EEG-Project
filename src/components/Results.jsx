@@ -1,7 +1,8 @@
 import React from "react";
 import { severityClass } from "../utils/scoring";
+import AICoachChat from "./AICoachChat";
 
-export default function Results({ results, name, date }) {
+export default function Results({ results, name, date, formAnswers }) {
   return (
     <div className="results-wrapper" id="results-section">
       <div className="results-card">
@@ -69,6 +70,9 @@ export default function Results({ results, name, date }) {
           </p>
         </div>
       </div>
+
+      {/* AI Wellness Coach Chat */}
+      <AICoachChat results={results} formAnswers={formAnswers ?? {}} />
     </div>
   );
 }
