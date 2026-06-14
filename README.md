@@ -76,22 +76,22 @@ Housed in the processing folders, a Light Gradient Boosting Machine (LightGBM) f
 
 The client-facing portal handles user enrollment and establishes our anonymous evaluation session pipeline.
 
-![Main Page](Photo\Main.jpg)
+![Main Page](Photo/Main.jpg)
 
 ### Dynamic Question Assessment Workspace
 
 Interactive Likert choice architecture dynamically evaluates user parameters across all 65 cross-validated clinical stems.
-![Questionare](Photo\Questionare.jpg)
+![Questionare](Photo/Questionare.jpg)
 
 ### Real-Time Metric Severity Dashboard
 
 Upon submission, the data transformation backend instantly evaluates individual domain raw scores and outputs mapped stratification levels.
-![Assesment Score](Photo\Assesment_score.jpg)
+![Assesment Score](Photo/Assesment_score.jpg)
 
 ### Conversational AI Wellness Coach Terminal
 
 The stateful, session-aware agent processes user profiles via LangChain memory blocks to recommend custom lifestyle strategies.
-![LLM](Photo\LLM.jpg)
+![LLM](Photo/LLM.jpg)
 ---
 
 ## 📊 Diagnostic Dataset Description
