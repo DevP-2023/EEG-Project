@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import rochanPhoto from "../assets/rochan.png";
 import devanshPhoto from "../assets/devansh.jpg";
-import sayaliPhoto from "../assets/sayali.png";
+import sayaliPhoto from "../assets/Sayali.png";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState("developers");
