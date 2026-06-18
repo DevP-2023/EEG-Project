@@ -9,7 +9,7 @@
   "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
   "build": "tsc && vite build",
   "preview": "vite preview",
-  "start": "npm run dev"
+  "start": "npm run build && node -e \"require('http').createServer((req, res) => { const fs = require('fs'); const path = require('path'); const file = path.join('./dist', req.url === '/' ? 'index.html' : req.url); res.setHeader('Content-Type', 'text/html'); res.end(fs.readFileSync(file)); }).listen(process.env.PORT || 3000);\""
 },
   "devDependencies": {
     "@types/react": "^19.2.15",
