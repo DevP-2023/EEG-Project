@@ -764,6 +764,21 @@ body::before {
   transform: translateY(-2px);
 }
 
+.btn-autofill {
+  background: linear-gradient(135deg, #fef3c7, #fcd34d);
+  color: #92400e;
+  border: 2px solid #f59e0b;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-autofill:hover {
+  border-color: #f59e0b;
+  color: #78350f;
+  background: linear-gradient(135deg, #fef08a, #fbbf24);
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(245, 158, 11, 0.15);
+  transform: translateY(-2px);
+}
+
 .btn-secondary {
   background: linear-gradient(135deg, #e0e7ff, #f0fdfa);
   color: var(--clr-primary);
