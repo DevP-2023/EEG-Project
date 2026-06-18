@@ -3,13 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev:backend": "cd AIAgent && python server.py",
-    "dev:frontend": "vite --open",
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
+"scripts": {
+  "dev:backend": "cd AIAgent && python server.py",
+  "dev:frontend": "vite --open",
+  "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+  "build": "tsc && vite build",
+  "preview": "vite preview",
+  "start": "npm run dev"
+},
   "devDependencies": {
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
