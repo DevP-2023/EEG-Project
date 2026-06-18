@@ -3,19 +3,20 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-"scripts": {
-  "dev:backend": "cd AIAgent && python server.py",
-  "dev:frontend": "vite --open",
-  "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-  "build": "tsc && vite build",
-  "preview": "vite preview",
-  "start": "npm run build && node -e \"require('http').createServer((req, res) => { const fs = require('fs'); const path = require('path'); const file = path.join('./dist', req.url === '/' ? 'index.html' : req.url); res.setHeader('Content-Type', 'text/html'); res.end(fs.readFileSync(file)); }).listen(process.env.PORT || 3000);\""
-},
+  "scripts": {
+    "dev:backend": "cd AIAgent && python server.py",
+    "dev:frontend": "vite --open",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "start": "serve -s dist -l $PORT"
+  },
   "devDependencies": {
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
     "concurrently": "^10.0.3",
+    "serve": "^14.2.6",
     "typescript": "~6.0.2",
     "vite": "^8.0.12"
   },
