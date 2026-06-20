@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const API_BASE = "http://localhost:5001";
+const API_BASE = "https://eeg-sqdw.onrender.com";
 
 /**
  * Maps section titles from the Results scoring to the 0-100 scale
