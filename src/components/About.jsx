@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import rochanPhoto from "../assets/rochan.png";
 import devanshPhoto from "../assets/devansh.jpg";
 import sayaliPhoto from "../assets/Sayali.png";
+import paulPhoto from "../assets/director_paul_chandrankunnel.jpg";
+import stanleyPhoto from "../assets/Stanley.jpeg";
+import principalPhoto from "../assets/Principal.jpg";
+import ishaPhoto from "../assets/isha.jpeg";
+import akshitaPhoto from "../assets/akshita.jpeg";
+import minaksheePhoto from "../assets/minakshee.jpeg";
+import shwetaPhoto from "../assets/shweta.jpeg";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState("developers");
@@ -31,13 +38,13 @@ export default function About() {
   ];
 
   const supporters = [
-    { name: "Dr. Fr. Paul Chandrankunnel", initials: "PL", image: "Photo/director_paul_chandrankunnel.jpg" },
-    { name: "Dr. Fr. Stanly Wilson", initials: "FS", image: "Photo/Stanley.jpeg" },
-    { name: "Dr. Vijay M. Wadhai", initials: "VW" , image : "Photo/Principal.jpg"},
-    { name: "Ms. Isha Suri", initials: "IS" , image : "Photo/isha.jpeg"},
-    { name: "Dr. Akshita Chanchlani", initials: "AK", image : "Photo/akshita.jpeg" },
-    { name: "Dr. Minakshi Patil", initials: "DM", image : "Photo/minakshee.jpeg" },
-    { name: "Dr. Shweta Kanhere", initials: "SH", image : "Photo/shweta.jpeg" },
+    { name: "Dr. Fr. Paul Chandrankunnel", initials: "PL", image: paulPhoto },
+    { name: "Dr. Fr. Stanly Wilson", initials: "FS", image: stanleyPhoto },
+    { name: "Dr. Vijay M. Wadhai", initials: "VW", image: principalPhoto },
+    { name: "Ms. Isha Suri", initials: "IS", image: ishaPhoto },
+    { name: "Dr. Akshita Chanchlani", initials: "AK", image: akshitaPhoto },
+    { name: "Dr. Minakshi Patil", initials: "DM", image: minaksheePhoto },
+    { name: "Dr. Shweta Kanhere", initials: "SH", image: shwetaPhoto },
   ];
 
   return (
